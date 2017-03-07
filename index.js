@@ -68,15 +68,9 @@ function receivedMessage(event) {
 	var recipientID = event.recipient.id;
 	var timeOfMessage = event.timestamp;
 	var message = event.message;
-	var coordinates = event.location.coordinates;
 
 	console.log("Received message for user %d and page %d at with message:", senderID, recipientID, timeOfMessage);
 	console.log(JSON.stringify(message));
-	
-	if (coordinates != null)
-	{
-		console.log("Coordinates is not null");
-	}
 	
 	var messageId = message.mid;	
 	var messageText = message.text;
