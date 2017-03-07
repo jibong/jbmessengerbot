@@ -1,5 +1,7 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
+var jsonParser = bodyParser.json();
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
@@ -30,7 +32,7 @@ app.get('/webhook', function(req, res) {
 	}
 });
 
-app.post('/webhook', function (req, res) {
+app.post('/webhook', jsonParser, function (req, res) {
 	var data = req.body;
 
 	// Make sure this is a page subscription
