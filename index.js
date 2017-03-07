@@ -19,7 +19,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/webhook', function(req, res) {
-	if (req.query['hub.mode'] == 'subscribe' && req.query[hub.verify_token'] == 'this_is_my_token_jb_messenger') {
+	if (req.query['hub.mode'] == 'subscribe' && req.query['hub.verify_token'] == 'this_is_my_token_jb_messenger') {
 		console.log("Validating webhook");
 		res.status(200).send(req.query['hub.challenge']);
 	}
