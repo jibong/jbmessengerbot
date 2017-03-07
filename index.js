@@ -69,12 +69,14 @@ function receivedMessage(event) {
 	var timeOfMessage = event.timestamp;
 	var message = event.message;
 	var coordinates = event.location.coordinates;
-	var longtitude = coordinates.long;
-	var latitude = coordinates.lat;
 
 	console.log("Received message for user %d and page %d at with message:", senderID, recipientID, timeOfMessage);
 	console.log(JSON.stringify(message));
-	console.log("location longtitude %d latitude %d", longtitude, latitude);	
+	
+	if (coordinates != null)
+	{
+		console.log("Coordinates is not null");
+	}
 	
 	var messageId = message.mid;	
 	var messageText = message.text;
@@ -88,10 +90,7 @@ function receivedMessage(event) {
 				
 			case 'nifty':
 				var niftyMessage = "looking for nifty cups?";
-				sendTextMessage(senderID, niftyMessage);
-				
-				var locationText = "longtitude: " + longtitude + " latitude: " + latitude";
-				sendTextMessage(senderID, locationText);				
+				sendTextMessage(senderID, niftyMessage);			
 				break;
 				
 			default:
