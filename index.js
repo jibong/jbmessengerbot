@@ -81,7 +81,11 @@ function receivedMessage(event) {
 			case 'generic':
 				sendGenericMessage(senderID);
 				break;
-			
+				
+			case 'nifty':
+				var niftyMessage = "nifty cups?";
+				sendTextMessage(senderID, niftyMessage);
+				
 			default:
 				sendTextMessage(senderID, messageText);
 		}
@@ -103,14 +107,14 @@ function sendTextMessage(recipientId, messageText) {
 	callSendAPI(messageData);
 }
 
-function sendGenericMessage(senderID)
+function sendGenericMessage(recipientId)
 {
 	var messageData = {
 		recipient: {
 			id: recipientId
 		},
 		message: {
-			text: 'You send a generic text'
+			text: 'You send a generic text?'
 		}
 	};
 	
