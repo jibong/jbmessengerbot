@@ -84,9 +84,14 @@ function receivedMessage(event) {
 				
 			case 'nifty':
 				var niftyMessage = "looking for nifty cups?";
-				sendTextMessage(senderID, niftyMessage);			
+				sendTextMessage(senderID, niftyMessage);
 				break;
-				
+			
+			case 'yes':
+				var niftyLink = "Go to this page https://www.facebook.com/Cup-of-Love-Nifty-Cups-for-infants-2185153225043868/";
+				sendTextMessage(senderID, niftyLink);
+				break;
+			
 			default:
 				sendTextMessage(senderID, messageText);
 		}
