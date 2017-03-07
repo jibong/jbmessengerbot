@@ -1,2 +1,2 @@
-# jbmessengerbot
-Sample Messenger Bot
+# JB Messenger Bot
+A Sample Messenger Bot
